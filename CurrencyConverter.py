@@ -31,8 +31,11 @@ class CurrencyConverter:
         '''
         since this is not a live exchanging process
         I will store repeated exchange rates in a hash table.
+
+        TODO:
+        # edge cases to be handeld are: ensure type of value is digit only, currency symbols are valid and supported
+        # target currrency are not strict for now.
         '''
-        #edge cases to be handeld are: ensurre type of value is digits, currency sy,bols are correct
         if (currency_id, target_id) not in self.exchange_rate:
             rate = self.currency.get_rate(currency_id, target_id)
             self.exchange_rate[(currency_id, target_id)] = rate
