@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 import cgi
-from io import BytesIO
-import pdb
 from CurrencyConverter import CurrencyConverter
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from urllib.parse import urlparse, parse_qs, unquote
