@@ -78,14 +78,15 @@ class CurrencyConverter:
                 converted_value = self.exchange_currency(currency_id, self.target_currency, value)
                 converted_data = {"value": converted_value, "currency": self.target_currency}
                 #Aesthetics
-                if self.options.visual == True:
-                    print(converted_data)
-                if self.options.out_file:
-                    list_converted_values.append(converted_data)
                 if self.options.detailed_visual:
                     output = "The amount of {} {} is {} {} as of today".format(value, currency, converted_value, self.target_currency)
                     print(output)
                     self.logger.info(output)
+                elif self.options.visual == True:
+                    print(converted_data)
+                
+                if self.options.out_file:
+                    list_converted_values.append(converted_data)
             
         if list_converted_values:
             write_to_file(list_converted_values, self.options.out_file)
